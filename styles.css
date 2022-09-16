@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.title {
+  margin: 50px auto;
+  font-size: 2.5rem;
+}
+
+.placeholder {
+  margin: 40px auto;
+  font-size: 2.25rem;
+}
+
+h3 {
+  margin: 20px auto;
+}
+
+body {
+  text-align: center;
+}
+
+.converter-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+#from,
+#to {
+  margin: 10px;
+}
+
+.from,
+.to {
+  margin: 10px;
+}
+
+.convert-btn {
+  padding: 0 10px;
+}
+
