@@ -13,16 +13,22 @@
   <h3>This is a simple currency converter app.</h3>
   <main>
     <form class="converter-wrapper">
-      <label for="from" class="from">From: </label>
-      <select name="currency" id="from">
+      <fieldset>
+        <legend>From: </legend>
+        <label for="originalValue"></label>
+        <input type="text" id="originalValue" name="originalValue">
+        <label for="from" class="from"></label>
+        <select name="currency" id="from">
 
-      </select>
-      <br>
-      <label for="to" class="to">To: </label>
-      <select name="converted" id="to" required>
-
-      </select>
-      <br>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>To: </legend>
+        <label for="to" class="to"></label>
+        <select name="converted" id="to" required>
+  
+        </select>
+      </fieldset>
     </form>
     <button class="convert-btn">Convert</button>
   </main>

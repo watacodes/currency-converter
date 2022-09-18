@@ -14,7 +14,7 @@ function appInit() {
       loadCurrencyList();
       })
     .catch(err => console.log(err));
-}
+};
 
 appInit();
 
@@ -25,18 +25,23 @@ function loadCurrencyList() {
     console.log(originalCurrency[originalCurrency.length]);
     originalCurrency[i] = new Option(currency[i]);
     convertedCurrency[i] = new Option(currency[i]);
-  }
-}
+  };
+};
 
 function getAPI() {
-  const getCurrency = document.getElementById('from').value.toUpperCase().trim();
-  const convertTo = document.getElementById('to').value.toUpperCase().trim();
+  let getCurrency = document.getElementById('from').value.toUpperCase().trim();
+  let convertTo = document.getElementById('to').value.toUpperCase().trim();
+  let originalValue = document.getElementById('originalValue').value.trim();
+
   fetch(`https://api.vatcomply.com/rates?base=${encodeURIComponent(getCurrency)}`)
     .then(res => res.json())
     .then(data => {
-      placeholder.innerText = `1 ${getCurrency} is ${data.rates[convertTo]} in ${convertTo}!`;
+      if (originalValue) {
+        placeholder.innerText = `${originalValue} ${getCurrency} is ${originalValue * data.rates[convertTo]} in ${convertTo}!`;
+      } else {
+        placeholder.innerText = `1 ${getCurrency} is ${data.rates[convertTo]} in ${convertTo}!`;
+      }
       console.log(data, placeholder.innerText);
     })
     .catch(err => console.log(err));
-}
-
+};
